@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card glass p-4 text-center">
+
+    <h2 style="color: green;">Dashboard</h2>
+
+
+
+    <!-- Graphs Section -->
+    <h4 style="color: green;">Model Performance</h4>
+
+    <p style="color: red; font-weight: bold; font-size: 20px;">
+    Accuracy of EfficientNetB0: 97.5%
+    </p>
+
+    <div class="row justify-content-center">
+
+        <!-- Accuracy Graph -->
+        <div class="col-md-5 mb-3">
+            <div class="card p-2 bg-transparent border-0">
+                <h6 class="text-white">Accuracy</h6>
+                <img src="{{ url_for('static', filename='images/accuracy_graph.png') }}"
+                     class="img-fluid rounded shadow">
+            </div>
+        </div>
+
+        <!-- Loss Graph -->
+        <div class="col-md-5 mb-3">
+            <div class="card p-2 bg-transparent border-0">
+                <h6 class="text-white">Loss</h6>
+                <img src="{{ url_for('static', filename='images/loss_graph.png') }}"
+                     class="img-fluid rounded shadow">
+            </div>
+        </div>
+
+        <!-- NEW: Class Distribution -->
+    <div class="mt-4">
+        <h4 class="text-white">Class Distribution</h4>
+
+        <img src="{{ url_for('static', filename='images/class_distribution.png') }}"
+             class="img-fluid rounded shadow"
+             style="max-width: 1000px;">
+    </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
